@@ -29,18 +29,14 @@ const App = () => {
     return
   }
   //Update Job
-  const updateJob = async(job)=> {fetch(`/api/jobs/${job.id}`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error fetching JSON:', error));
-    // const res = await fetch(`/api/jobs/${job.id}` ,{
-      
-    //   method:'PUT',
-    //   headers:{
-    //     'Content-Type':'application/json'
-    //   },
-    //   body: JSON.stringify(job)
-    // })
+const updateJob = async(job)=> {
+    const res = await fetch(`/api/jobs/${job.id}` ,{
+      method:'PUT',
+      headers:{
+        'Contet-Type':'application/json'
+      },
+      body: JSON.stringify(job)
+    })
     return
   }
   const router = createBrowserRouter(
